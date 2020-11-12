@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>Signin Template · Bootstrap</title>
+  <!-- CSS -->
+  <!-- ********************include bottstrap css here*************** -->
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="signin.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+  <form class="form-signin">
+    <img class="mb-4" src="./bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <a id="signin" class="btn btn-lg btn-primary btn-block">Sign in</a>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+  </form>
+  <!-- jQuery and JS bundle w/ Popper.js -->
+  <!-- ******************include bootstrapjavascript file here************************* -->
+  <script>
+    //adding event on submit button
+    document.getElementById('signin').addEventListener("click", function () {
+      var email = document.getElementById('inputEmail').value;
+      var pass = document.getElementById('inputPassword').value;
+      //if both input feild are available then cookie will get stored and user is redirected to landing page
+      if (email && pass)
+        signinbtn(email, pass);
+      else
+        console.log("fill form correctly");
+    });
+    function signinbtn(email, pass) {
+      document.cookie = email;  //storing cookie
+      console.log("user - authenticated");
+      window.location.href = '/chegg/webn/landing.html' //change the url according to your computer directory
+    }
+
+  </script>
+</body>
+
+</html>
